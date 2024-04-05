@@ -1,0 +1,39 @@
+
+
+.headerButton{
+    background-color: none;
+    text-decoration: none;
+    color: white;
+    margin: 2%;
+    width: 80px;
+  }
+  
+  .headerComponent{
+    height: 90px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around; 
+    align-items: center;
+    gap: 5%;
+    background-color: #000;
+    clip-path: polygon(0 1%, 100% 0%, 100% 100%, 0 100%, 0% 50%);
+  
+  }
+  
+  .headerComponent div{
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 5%;
+    
+  }
+  .headerComponent .left{
+    display: flex;
+    align-items: center;
+  }
+  
+  .dropdown{
+   border: none;
+   background-color: #000;
+   color: white;
+  }
+  

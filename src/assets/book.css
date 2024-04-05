@@ -1,0 +1,16 @@
+.card{
+    padding: 2em;
+    display: flex;
+    flex-flow: column;
+    justify-items: center;
+    align-items: center;
+}
+.title{
+    width: 50%;
+    display: flex;
+    flex-flow: row ;
+    justify-items: center;
+    align-items: center;
+
+    justify-content: space-between;
+}
