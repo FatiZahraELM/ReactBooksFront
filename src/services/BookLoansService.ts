@@ -1,34 +1,35 @@
+import { BookLoan } from './../models/bookLoan';
 import API from '../axiosInstance'
-import { Rating } from '../models/rating';
-export const getAllRatings = async () => {
+export const getAllBookLoans = async () => {
 
     try {
-        const response = await API.get(`/ratings`);
+        const response = await API.get(`/bookLoans`);
         return response.data;
     } catch (error: unknown) {
         console.log('Unknown error: ' + error);
     }
 
 };
-export const getRatingsByUser = async (id:number) => {
+export const getBookLoansByUser = async (id:number) => {
 
     try {
-        const response = await API.get(`/users/${id}/ratings`);
+        const response = await API.get(`/users/${id}/bookLoans`);
         return response.data;
     } catch (error: unknown) {
         console.log('Unknown error: ' + error);
     }
 
 };
-export const saveRating= async(rating:Rating) => {
+export const saveBookLoans = async(bookLoan:BookLoan) => {
     
     try {
-        const response = await API.post(`/ratings`,rating);
+        const response = await API.post(`/bookLoans`,bookLoan);
         return response.data;
     } catch (error:unknown) {
         console.log("error",error);
     }
 };
+
 
 export const fetchUserByName = async (name:string) => {
     try {

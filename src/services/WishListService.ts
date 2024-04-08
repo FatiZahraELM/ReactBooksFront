@@ -1,29 +1,30 @@
+import { WishList } from './../models/wishList';
 import API from '../axiosInstance'
-import { Rating } from '../models/rating';
-export const getAllRatings = async () => {
+export const getAllWishLists = async () => {
 
     try {
-        const response = await API.get(`/ratings`);
+        const response = await API.get(`/wishLists`);
         return response.data;
     } catch (error: unknown) {
         console.log('Unknown error: ' + error);
     }
 
 };
-export const getRatingsByUser = async (id:number) => {
+export const getWishListByUser = async (id:number) => {
 
     try {
-        const response = await API.get(`/users/${id}/ratings`);
+        const response = await API.get(`/users/${id}/wishLists`);
         return response.data;
     } catch (error: unknown) {
         console.log('Unknown error: ' + error);
     }
 
 };
-export const saveRating= async(rating:Rating) => {
+
+export const saveWishList = async(wishList:WishList) => {
     
     try {
-        const response = await API.post(`/ratings`,rating);
+        const response = await API.post(`/wishLists`,wishList);
         return response.data;
     } catch (error:unknown) {
         console.log("error",error);

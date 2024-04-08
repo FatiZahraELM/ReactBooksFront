@@ -33,7 +33,6 @@ export const UserPage = () => {
             {user && <UserDetails name={user.name} email={user.email} />}
         </div>
         <div>
-            <WishsList/>
         </div>
         <footer><Footer /></footer>
 

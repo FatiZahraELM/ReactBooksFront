@@ -4,15 +4,17 @@ import Header from '../components/header'
 
 import Footer from '../components/footer';
 
-import RoomList from '../components/bookList';
+import BookList from '../components/bookList';
 const Books = () => {
     return (
       <>
         <Header />
-        <RoomList />
+        <BookList />
         <footer><Footer /></footer>
   
       </>
     );
   }
   export default Books
+
+  

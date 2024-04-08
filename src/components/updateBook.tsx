@@ -43,16 +43,16 @@ const UpdateBook = () => {
             genre: genre,
             resume: resume,
             author: author,
-            availability: availability // Assurez-vous que cela correspond à votre modèle de données
+            availability: availability 
         };
 
         try {
             await updateBook(bookToUpdate);
             console.log('book updated successfully');
-            navigate('/books'); // Redirige vers la liste des books après la mise à jour
+            navigate('/books'); 
         } catch (error) {
             console.error('Failed to update book:', error);
-            // Gérer l'erreur ici (par exemple, afficher un message d'erreur à l'utilisateur)
+            
         }
     };
     return (

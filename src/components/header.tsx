@@ -9,12 +9,10 @@ function Header() {
         <div className='left'>
           <h5 style={{ color: '#7337d4' }}>Biblio</h5>
 
-          <select className='dropdown' name="menu" id="menu" >
-            <option value="" disabled selected>Menu</option>
-            <option value="value 1">value 1</option>
-            <option value="value 2">value 2</option>
-            <option value="value 3">value 3</option>
-          </select>
+          <Link to="/">
+
+            <a className='headerButton'>Home</a>
+          </Link>
           <Link to="/users">
             <a className='headerButton'>Users</a>
           </Link>
@@ -28,9 +26,14 @@ function Header() {
             <a className='headerButton'>Ratings</a>
           </Link>
 
-          <Link to="/">
+         
+          <Link to="/wishLists">
 
-            <a className='headerButton'>Home</a>
+            <a className='headerButton'>wishList</a>
+          </Link>
+          <Link to="/bookLoans">
+
+            <a className='headerButton'>bookLoans</a>
           </Link>
         </div>
       </div>

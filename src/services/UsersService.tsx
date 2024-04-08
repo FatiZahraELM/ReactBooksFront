@@ -47,12 +47,4 @@ export const getUserDetails= async (id:number) => {
         console.log("error", error);
     }
 };
-export const getAllwishLists= async (id:number) => {
 
-    try {
-        const response = await API.get(`/users/${id}/wishlist`);
-        return response.data;
-    } catch (error) {
-        console.log("error", error);
-    }
-};

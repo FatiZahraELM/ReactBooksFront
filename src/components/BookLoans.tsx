@@ -4,26 +4,26 @@ import { Table, Button } from 'react-bootstrap';
 import { faEdit, faInfoCircle, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link, useParams } from 'react-router-dom';
-import { getAllWishLists} from '../services/WishListService';
-import { WishList } from '../models/wishList';
+import { getAllBookLoans} from '../services/BookLoansService';
+import { BookLoan } from '../models/bookLoan';
 
 
 
-const WishsList = () => {
+const BookLoans = () => {
     const { id } = useParams();
-    const [wishLists, setWishLists] = useState<WishList[]>([]);
+    const [BookLoanss, setBookLoans] = useState<BookLoan[]>([]);
 
     useEffect(() => {
-        const fetchwishLists = async () => {
+        const fetchBookLoans = async () => {
             try {
-                const data = await getAllWishLists();
-                setWishLists(data);
+                const data = await getAllBookLoans();
+                setBookLoans(data);
             } catch (error) {
                 console.log(error);    
             }
         };
 
-        fetchwishLists();
+        fetchBookLoans();
     }, []);
 
     
@@ -31,8 +31,8 @@ const WishsList = () => {
     return (
         <div className="card">
             <div className='title'>
-                <h1 style={{ color: '#7337d4' }}>wishLists</h1>
-                <Link to="/wishLists/form">
+                <h1 style={{ color: '#7337d4' }}>BookLoanss</h1>
+                <Link to="/BookLoans/form">
                     <Button style={{ backgroundColor: '#7337d4', borderColor: '#7337d4', marginRight: '0.5rem' }}>
                         <FontAwesomeIcon icon={faPlus} /> New
                     </Button>
@@ -49,21 +49,21 @@ const WishsList = () => {
                         </tr>
                     </thead>
                     <tbody>
-                    {wishLists.map((wishList) => (
-    <tr key={wishList.user.name}>
+                    {BookLoanss.map((BookLoans) => (
+    <tr key={BookLoans.user.name}>
         <td>
-            {wishList.book && wishList.book.title}
+            {BookLoans.book && BookLoans.book.title}
         </td>
         <td>
-            {wishList.user && wishList.user.name}
+            {BookLoans.user && BookLoans.user.name}
         </td>
         <td>
-            <Link to={`/wishList/${id}/details`}>
+            <Link to={`/bookLoans/${id}/details`}>
                 <Button style={{ backgroundColor: '#7337d4', borderColor: '#7337d4', marginRight: '0.5rem' }} className=" mr-2">
                     <FontAwesomeIcon icon={faInfoCircle} />
                 </Button>
             </Link>
-            <Link to={`/wishList/${id}/update`}>
+            <Link to={`/bookLoans/${id}/update`}>
                 <Button style={{ backgroundColor: '#bea3e9', borderColor: '#bea3e9', marginRight: '0.5rem' }} className=" mr-2">
                     <FontAwesomeIcon icon={faEdit} />
                 </Button>
@@ -78,4 +78,4 @@ const WishsList = () => {
     );
 };
 
-export default WishsList;
+export default BookLoans;
